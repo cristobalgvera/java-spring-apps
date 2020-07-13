@@ -1,11 +1,15 @@
-package learning.spring.di;
+package springboot;
 
 import learning.spring.di.controllers.GreetingController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+// @ComponentScan it's used for scan another package and use it's @Components,
+// @Controllers, @Servers, and so on.
+@ComponentScan("learning.spring.di")
 public class DependencyInjectionApplication {
 
     public static void main(String[] args) {
