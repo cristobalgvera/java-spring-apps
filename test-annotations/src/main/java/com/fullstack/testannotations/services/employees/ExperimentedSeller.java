@@ -2,6 +2,7 @@ package com.fullstack.testannotations.services.employees;
 
 import com.fullstack.testannotations.services.reports.Report;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component // Annotation to reference a bean via class. This is used in main
@@ -10,7 +11,8 @@ public class ExperimentedSeller implements Employee {
     private Report report;
 
     @Autowired // This annotation inject a Report object when class require it
-    public void setReport(Report report) {
+//    @Qualifier("humanResourcesReport") // This annotation let autowired inject the right dependence
+    public void setReport(@Qualifier("humanResourcesReport") Report report) { // Can be used in each argument too
         this.report = report;
     }
 
