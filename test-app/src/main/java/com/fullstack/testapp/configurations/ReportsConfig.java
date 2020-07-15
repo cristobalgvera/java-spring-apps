@@ -9,16 +9,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 @Configuration
-public class ReportConfig {
+public class ReportsConfig {
 
     @Bean
     public ReportFactory reportFactory() {
         return new ReportFactory();
-    }
-
-    @Bean
-    public EmployeeFactory employeeFactory() {
-        return new EmployeeFactory();
     }
 
     @Bean
@@ -28,20 +23,8 @@ public class ReportConfig {
     }
 
     @Bean
-    @Profile("default")
-    public ReportService reportServiceDirectorImpl(ReportFactory reportFactory) {
-        return reportFactory.createReport("director");
-    }
-
-    @Bean
     @Profile("secretary")
     public EmployeeService secretaryServiceImpl(EmployeeFactory employeeFactory) {
         return employeeFactory.createEmployee("secretary");
-    }
-
-    @Bean
-    @Profile("secretary")
-    public ReportService reportServiceSecretaryImpl(ReportFactory reportFactory) {
-        return reportFactory.createReport("secretary");
     }
 }
