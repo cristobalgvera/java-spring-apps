@@ -11,7 +11,6 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan("com.fullstack.testapp")
 public class TestAppApplication {
 
-    @Autowired
     public static void main(String[] args) {
         SpringApplication.run(TestAppApplication.class, args);
 //        ApplicationContext applicationContext = SpringApplication.run(TestAppApplication.class, args);

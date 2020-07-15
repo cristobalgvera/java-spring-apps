@@ -11,15 +11,18 @@ public class IndexController {
 
 //    @Autowired
     private EmployeeService employee;
+    private EmployeeService employee2;
 
     @Autowired
-    public void setEmployee(EmployeeService employee) {
+    public void setEmployee(EmployeeService employee, EmployeeService employee2) {
         this.employee = employee;
+        this.employee2 = employee2;
     }
 
     @RequestMapping("/")
     public String setParameters(Model model) {
         model.addAttribute("employee", employee);
+        model.addAttribute("employee2", employee2);
         return "index";
     }
 }
