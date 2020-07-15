@@ -11,11 +11,14 @@ public class TestAnnotationsApplication {
     public static void main(String[] args) {
         // Initialize Spring app
         ApplicationContext applicationContext = SpringApplication.run(TestAnnotationsApplication.class, args);
-        // Request a bean object to Spring container
+        // Request bean objects to Spring container
         Employee employee = (Employee) applicationContext.getBean("experimentedSeller");
-        // Use the bean
-        System.out.println("Tasks: " + employee.getTasks());
-        System.out.println("Report: " + employee.getReport());
+        Employee employee1 = (Employee) applicationContext.getBean("experimentedSeller");
+        // Compare beans
+        if (employee == employee1) System.out.println("Equals objects");
+        else System.out.println("Different objects");
+
+        System.out.println(employee + "\n" + employee1);
     }
 
 }

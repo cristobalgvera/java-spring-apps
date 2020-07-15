@@ -3,9 +3,11 @@ package com.fullstack.testannotations.services.employees;
 import com.fullstack.testannotations.services.reports.Report;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component // Annotation to reference a bean via class. This is used in main
+@Scope("prototype") // Annotation to define how object are created when it's requested. Default is singleton
 public class ExperimentedSeller implements Employee {
 
     private Report report;
