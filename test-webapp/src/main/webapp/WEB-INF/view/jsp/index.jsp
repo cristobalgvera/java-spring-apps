@@ -13,7 +13,7 @@
 </head>
 <body>
 <h1>Hello friend!</h1>
-<p>Wanna a greet? <a href="/show-form">Pulse here</a></p>
+<p>Wanna a greet? <a href="<c:url value="/show-form"/>">Pulse here</a></p>
 <%--
     The <a> tag shows the mapping route defined previously on controllers, specifically on
     GreetController.java file on @RequestMapping("/show-form")

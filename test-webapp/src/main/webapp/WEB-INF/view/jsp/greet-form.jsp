@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: crist
@@ -21,7 +22,7 @@
     you can define the request method in the annotation or even use a @GetMapping
     or @PostMapping annotations to reduce the code.
 --%>
-<form action="/process-form-concatenated" method="get"> <%-- For this use we change action value to worked mapping reference --%>
+<form action="<c:url value="/process-form-concatenated"/>" method="get"> <%-- For this use we change action value to worked mapping reference --%>
     <input type="text" name="name" placeholder="Name">
     <input type="submit">
 </form>

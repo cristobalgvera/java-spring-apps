@@ -51,7 +51,7 @@
     <h3>Test image</h3>
     <button onclick="hello()">Press me!</button>
     <img src="<c:url value="/img/test-img.jpg"/>" alt="test-img">
-    <img src="${pageContext.request.contextPath}/img/test-img-2.png" alt="test-img-2">
+    <img src="<c:url value="/img/test-img-2.png"/>" alt="test-img-2">
     <img src="<c:url value="/img/test-img-3.png"/>" alt="test-img-3" width="30%" height="30%">
     <img src="<c:url value="/img/test-img-4.jpeg"/>" alt="test-img-4">
 </div>
