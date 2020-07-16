@@ -19,6 +19,13 @@
     that value will be the value of 'param.name'. This is an useful way to
     transfer data between pages.
 --%>
+
+<%--
+    We don't need to change param.name because it's a way to transfer origin data between pages.
+    They are different objects with same names.
+--%>
 <h1><c:out value="Hi, ${param.name}!"></c:out></h1>
+<%-- Attribute 'name' it's transferred from GreetController's processFormConcatenated method --%>
+<h2><c:out value="Hey, this is the processed message: ${name}"></c:out></h2>
 </body>
 </html>
