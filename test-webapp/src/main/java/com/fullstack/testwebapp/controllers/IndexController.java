@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller // This annotation tells Springboot he can response request do it by users
 public class IndexController {
-    @RequestMapping("/hello")   // Requests from 'http://localhost:8080/hello'
-    public String hello() {     // Method can return a String object or even a View or ModelAndView one
+    @RequestMapping("/")   // Requests from 'http://localhost:8080/'
+    public String index() {     // Method can return a String object or even a View or ModelAndView one
         return "index";         // This case, String object return, the object must be the name of a view (index.jsp)
     }
 
