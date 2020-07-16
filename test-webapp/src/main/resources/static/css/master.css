@@ -1,0 +1,15 @@
+.flex {
+  border: 1px solid black;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: auto;
+  width: 50%;
+}
+.flex img {
+  border: 1px solid black;
+  width: 50%;
+  margin: 20px 0;
+}
+
+/*# sourceMappingURL=master.css.map */
