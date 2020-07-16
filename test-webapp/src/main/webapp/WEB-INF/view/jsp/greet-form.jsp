@@ -22,7 +22,7 @@
     you can define the request method in the annotation or even use a @GetMapping
     or @PostMapping annotations to reduce the code.
 --%>
-<form action="<c:url value="/process-form-concatenated"/>" method="get"> <%-- For this use we change action value to worked mapping reference --%>
+<form action="<c:url value="/normal-greet/process-form-concatenated"/>" method="get"> <%-- For this use we change action value to worked mapping reference --%>
     <input type="text" name="name" placeholder="Name">
     <input type="submit">
 </form>

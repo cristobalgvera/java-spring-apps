@@ -6,7 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class GreetController {
+@RequestMapping("/normal-greet")
+// This annotation give controller more flexibility to name his @RequestMapping urls, because now
+// references can be named equals to another references in others controllers (see AlternateGreetController)
+public class NormalGreetController {
     @RequestMapping("/show-form") // By convention, usually mapping it's called like method's name
     public String showForm() {
         return "greet-form";
