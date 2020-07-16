@@ -7,10 +7,12 @@ import com.fullstack.testannotations.services.reports.SellDepartmentFinancialRep
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @ComponentScan("com.fullstack.testannotations")
 // Note: @ComponentScan makes @PostConstruct and @PreDestroy methods of ExperimentedSeller class execute
+@PropertySource("classpath:properties/business.properties") // Set path of properties file to use it on classes
 public class EmployeesConfig {
 
     @Bean // Defining Report class bean to use it later
