@@ -1,9 +1,12 @@
-package com.fullstack.testwebapp;
+package com.fullstack.testwebapp.bootloader;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+// When main class isn't in main package (usual practice), you need to specify the main package
+@ComponentScan("com.fullstack.testwebapp")
 public class TestWebappApplication {
 
     public static void main(String[] args) {

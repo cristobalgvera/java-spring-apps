@@ -1,4 +1,4 @@
-package com.fullstack.testwebapp.controllers;
+package com.fullstack.testwebapp.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

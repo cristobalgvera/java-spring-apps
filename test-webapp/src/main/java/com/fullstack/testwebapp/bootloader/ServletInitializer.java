@@ -1,4 +1,4 @@
-package com.fullstack.testwebapp;
+package com.fullstack.testwebapp.bootloader;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

@@ -19,5 +19,6 @@
     NormalGreetController.java file on @RequestMapping("/show-form")
 --%>
 <p>Wanna an alternate greet? <a href="<c:url value="/alternate-greet/show-form"/>">Pulse here</a></p>
+<p>Wanna registry on our page? <a href="<c:url value="/student/show-form"/>">Pulse here</a></p>
 </body>
 </html>
