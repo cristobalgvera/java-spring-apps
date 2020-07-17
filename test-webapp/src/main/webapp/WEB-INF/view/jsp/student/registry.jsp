@@ -55,6 +55,9 @@
     Email: <form:input path="email"/>
     <form:errors path="email" cssStyle="color: red"/>
     <br/>
+    Phone number: +569 <form:input path="phoneNumber"/>
+    <form:errors path="phoneNumber" cssStyle="color: red"/>
+    <br/>
     <input type="submit" value="Register">
 </form:form>
 </body>

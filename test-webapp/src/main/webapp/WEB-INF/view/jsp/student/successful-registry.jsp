@@ -28,6 +28,8 @@
     You had <strong><c:out value="${student.age}"/></strong> years old
     <br/>
     Your email is <strong><c:out value="${student.email}"/></strong>
+    <br/>
+    Your phone number is <strong><c:out value="+569${student.phoneNumber}"/></strong>
 </p>
 <%--
     Note:   Model object is transferred to this view via controller. The name was defined previously. To see

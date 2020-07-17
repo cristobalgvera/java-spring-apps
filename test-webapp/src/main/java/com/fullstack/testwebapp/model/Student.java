@@ -40,4 +40,8 @@ public class Student {
     @NotBlank(message = "Required field")
     @Email(message = "Insert a valid email")
     private String email;
+
+    // This annotation works to set custom patterns of validation. See regexp for more information.
+    @Pattern(regexp = "[0-9]{8}", message = "Invalid number")
+    private String phoneNumber;
 }
