@@ -24,6 +24,10 @@
     <c:forEach items="${student.livesWith}" var="liveWith">
         <strong><c:out value="[${liveWith}]"></c:out></strong>
     </c:forEach>
+    <br/>
+    You had <strong><c:out value="${student.age}"/></strong> years old
+    <br/>
+    Your email is <strong><c:out value="${student.email}"/></strong>
 </p>
 <%--
     Note:   Model object is transferred to this view via controller. The name was defined previously. To see

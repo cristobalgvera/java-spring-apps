@@ -4,8 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 // @Getter and @Setter are annotations of Lombok project
 @Getter
@@ -15,13 +14,14 @@ public class Student {
     /*
         Hibernate validator dependency was added to pom.xml file.
         Annotations used below above each attribute are dependant of that.
+        Annotations info: https://www.baeldung.com/javax-validation#validation
      */
 
-    @NotNull
+    @NotBlank(message = "Must insert your name")
     @Size(min = 2, message = "Minimal length: 2 characters")
     private String name;
 
-    @NotNull
+    @NotBlank(message = "Must insert your last name")
     @Size(min = 2, message = "Minimal length: 2 characters")
     private String lastName;
 
@@ -32,4 +32,12 @@ public class Student {
     private String city;
 
     private String[] livesWith; // Used for checkboxes section on registry.jsp view
+
+    @Positive(message = "Invalid age")
+    @Max(value = 115, message = "Invalid age")
+    private int age;
+
+    @NotBlank(message = "Required field")
+    @Email(message = "Insert a valid email")
+    private String email;
 }

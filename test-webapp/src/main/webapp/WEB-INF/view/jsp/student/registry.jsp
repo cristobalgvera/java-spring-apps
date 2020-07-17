@@ -49,6 +49,12 @@
     <br/>
     <form:checkboxes path="livesWith" items="${livesWith}"/>
     <br/>
+    Age: <form:input path="age"/>
+    <form:errors path="age" cssStyle="color: red"/>
+    <br/>
+    Email: <form:input path="email"/>
+    <form:errors path="email" cssStyle="color: red"/>
+    <br/>
     <input type="submit" value="Register">
 </form:form>
 </body>
