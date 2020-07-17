@@ -1,5 +1,6 @@
 package com.fullstack.testwebapp.model;
 
+import com.fullstack.testwebapp.validation.annotation.StudentEmailDomain;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;
@@ -38,6 +39,7 @@ public class Student {
     @Max(value = 115, message = "Invalid age")
     private int age;
 
+    @StudentEmailDomain(value = "ufromail.cl", message = "Insert your institutional email")
     @NotBlank(message = "Required field")
     @Email(message = "Insert a valid email")
     private String email;
