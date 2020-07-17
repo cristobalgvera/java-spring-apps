@@ -4,9 +4,11 @@ import com.fullstack.testwebapp.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -29,12 +31,15 @@ public class StudentController {
     }
 
     @RequestMapping("/process-form")
-    public String processForm(@ModelAttribute("student") Student student) {
+    public String processForm(@Valid @ModelAttribute("student") Student student, // @Valid is used to assign validation to the method.
+                              BindingResult bindingResult) { // BindingResult object has the result of validation. It require @Valid before.
         /*
             @ModelAttribute takes data of model and inject it in a method.
             That let Student object be transferred between views.
         */
-        return "student/successful-registry";
+        if (bindingResult.hasErrors()) return "student/registry"; // Simply if/else sentence to determine the way to proceed.
+                                            // If bindingResult has errors, we need to modify form telling the errors to users
+        else return "student/successful-registry";
     }
 
     @ModelAttribute("cities") // This way of @ModelAttribute can be used to define a variable and use it in JSP files.

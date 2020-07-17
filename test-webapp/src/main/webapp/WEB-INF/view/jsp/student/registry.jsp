@@ -27,18 +27,23 @@
         setWhateverYouWant(...), path value must be 'whateverYouWant'.
     --%>
     Name: <form:input path="name"></form:input>
+    <%-- Below tag shows, if is necesary, the error message setted on POJO class --%>
+    <form:errors path="name" cssStyle="color: red"/>
     <br/>
     Last name: <form:input path="lastName"></form:input>
+    <form:errors path="lastName" cssStyle="color: red"/>
     <br/>
     Resident city:
     <br/>
     <form:radiobuttons path="city" items="${cities}"/>
+    <form:errors path="city" cssStyle="color: red"/>
     <br/>
     Subject:
     <br/>
     <form:select path="subject">
         <form:options items="${subjects}"></form:options>
     </form:select>
+    <form:errors path="subject" cssStyle="color: red"/>
     <br/>
     Lives with:
     <br/>
