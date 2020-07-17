@@ -14,7 +14,16 @@
 <body>
 <h1>Registry completed!</h1>
 <p>
-    Welcome, <c:out value="${student.name} ${student.lastName}"/>, your registry is complete now!
+    Welcome, <strong><c:out value="${student.name} ${student.lastName}"/></strong>, your registry is complete now!
+    <br/>
+    Your selected subject was <strong><c:out value="${student.subject.toLowerCase()}"/></strong>.
+    <br/>
+    Your resident city is <strong><c:out value="${student.city}"/></strong>
+    <br/>
+    You lives with:
+    <c:forEach items="${student.livesWith}" var="liveWith">
+        <strong><c:out value="[${liveWith}]"></c:out></strong>
+    </c:forEach>
 </p>
 <%--
     Note:   Model object is transferred to this view via controller. The name was defined previously. To see

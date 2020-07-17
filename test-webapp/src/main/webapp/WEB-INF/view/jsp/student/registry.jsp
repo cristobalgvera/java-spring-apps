@@ -27,7 +27,23 @@
         setWhateverYouWant(...), path value must be 'whateverYouWant'.
     --%>
     Name: <form:input path="name"></form:input>
+    <br/>
     Last name: <form:input path="lastName"></form:input>
+    <br/>
+    Resident city:
+    <br/>
+    <form:radiobuttons path="city" items="${cities}"/>
+    <br/>
+    Subject:
+    <br/>
+    <form:select path="subject">
+        <form:options items="${subjects}"></form:options>
+    </form:select>
+    <br/>
+    Lives with:
+    <br/>
+    <form:checkboxes path="livesWith" items="${livesWith}"/>
+    <br/>
     <input type="submit" value="Register">
 </form:form>
 </body>

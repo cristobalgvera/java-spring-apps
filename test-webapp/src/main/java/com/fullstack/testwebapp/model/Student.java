@@ -9,5 +9,6 @@ import org.springframework.stereotype.Component;
 @Setter
 @Component // Makes the POJO class a bean
 public class Student {
-    private String name, lastName;
+    private String name, lastName, subject, city;
+    private String[] livesWith; // Used for checkboxes section on registry.jsp view
 }
