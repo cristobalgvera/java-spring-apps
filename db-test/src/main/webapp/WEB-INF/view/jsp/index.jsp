@@ -20,5 +20,15 @@
     Address:    <form:input path="address"/>    <br/>
     <button type="submit">Add me!</button>
 </form:form>
+<hr/>
+<h1>Find someone on our database</h1>
+<form action="<c:url value="/find"/>" method="get">
+    Name:       <input name="name">
+    <button type="submit">Search</button>
+</form>
+<form action="<c:url value="/find-all"/>">
+    <button type="submit">Search all</button>
+</form>
+<hr/>
 </body>
 </html>

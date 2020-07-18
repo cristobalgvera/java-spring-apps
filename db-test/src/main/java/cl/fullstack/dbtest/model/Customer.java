@@ -15,7 +15,7 @@ public class Customer {
 
     @Id // Set primary key
     @GeneratedValue // Autoincrement values
-    private int id;
+    private Long id;
 
     private String address, lastName, name;
 
@@ -29,7 +29,7 @@ public class Customer {
         this.address = address;
     }
 
-    public Customer(int id, String name, String lastName, String address) {
+    public Customer(Long id, String name, String lastName, String address) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
