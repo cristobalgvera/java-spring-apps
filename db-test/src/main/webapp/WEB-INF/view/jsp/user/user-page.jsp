@@ -33,5 +33,8 @@
 <form:form action="${pageContext.request.contextPath}/${customer.name.toLowerCase()}/logout" method="post">
     <button type="submit">Logout</button>
 </form:form>
+<form:form action="${pageContext.request.contextPath}/shop" method="post">
+    <button type="submit">Shop</button>
+</form:form>
 </body>
 </html>

@@ -1,16 +1,14 @@
 package cl.fullstack.dbtest.model.customer;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 
 @Entity
 @Component
-public class CustomerDetail {
+public class CustomerDetail implements CustomerService {
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "CUSTOMER_DETAIL_SEQ")
     protected Long id;
 
     @Column(length = 20)

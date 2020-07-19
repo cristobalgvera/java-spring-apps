@@ -3,15 +3,15 @@ package cl.fullstack.dbtest.model.customer;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity // Establish this POJO as an ORM (Object-Relational Mapping). Each attribute have a relationship whit a DB field.
-// Getter and setter methods automatically
 @Component
-public class Customer {
+public class Customer implements CustomerService  {
 
     @Id // Set primary key
-    @GeneratedValue // Autoincrement values
+    @GeneratedValue(generator = "CUSTOMER_SEQ") // Autoincrement values
     private Long id;
 
     @Column(length = 30)
@@ -27,13 +27,13 @@ public class Customer {
     @JoinColumn(name = "CUSTOMER_DETAIL_ID")
     private CustomerDetail customerDetail;
 
-//    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-//    private List<CustomerOrder> customerOrders;
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<CustomerOrder> customerOrders;
 
     public Customer() {
     }
 
-    // Constructor doesn't without id argument
+    // Constructor without id argument
     public Customer(String name, String lastName, String address) {
         this.name = name;
         this.lastName = lastName;
@@ -47,17 +47,17 @@ public class Customer {
         this.address = address;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Customer{" +
-//                "id=" + id +
-//                ", address='" + address + '\'' +
-//                ", lastName='" + lastName + '\'' +
-//                ", name='" + name + '\'' +
-//                ", customerDetail=" + customerDetail +
-//                ", customerOrders=" + customerOrders +
-//                '}';
-//    }
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", address='" + address + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", name='" + name + '\'' +
+                ", customerDetail=" + customerDetail +
+                ", customerOrders=" + customerOrders +
+                '}';
+    }
 
     public Long getId() {
         return id;
@@ -99,15 +99,17 @@ public class Customer {
         this.customerDetail = customerDetail;
     }
 
-//    public List<CustomerOrder> getCustomerOrders() {
-//        return customerOrders;
-//    }
-//
-//    public void setCustomerOrders(List<CustomerOrder> customerOrders) {
-//        this.customerOrders = customerOrders;
-//    }
-//
-//    public void addCustomerOrder(CustomerOrder customerOrder) {
-//        this.customerOrders.add(customerOrder);
-//    };
+    public List<CustomerOrder> getCustomerOrders() {
+        return customerOrders;
+    }
+
+    public void setCustomerOrders(List<CustomerOrder> customerOrders) {
+        this.customerOrders = customerOrders;
+    }
+
+    public void addCustomerOrder(CustomerOrder customerOrder) {
+        if (customerOrders == null) customerOrders = new ArrayList<>();
+        customerOrders.add(customerOrder);
+        customerOrder.setCustomer(this);
+    };
 }

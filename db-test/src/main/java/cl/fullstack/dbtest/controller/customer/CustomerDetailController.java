@@ -22,10 +22,10 @@ public class CustomerDetailController {
     private Customer customer;
 
     @Autowired
-    private CustomerDetail customerDetail;
+    private CustomerRepository customerRepository;
 
     @Autowired
-    private CustomerRepository customerRepository;
+    private CustomerDetail customerDetail;
 
     @Autowired
     private CustomerDetailRepository customerDetailRepository;
