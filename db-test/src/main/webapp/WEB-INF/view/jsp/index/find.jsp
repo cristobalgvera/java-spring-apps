@@ -35,15 +35,16 @@
 <h1>
     All customers <c:out value="${param.name != null ? String.format('named: %s', param.name) : ''}"/>
 </h1>
+<a href="<c:url value="/"/>">Back</a>
 <c:choose>
     <c:when test="${customers.isEmpty() || customers == null}">
         <p>There are no customers with that name</p>
     </c:when>
     <c:otherwise>
         <c:forEach items="${customers}" var="customer">
+            <hr width="50%"/>
             <form:form action="${pageContext.request.contextPath}/action" method="post">
                 <input type="hidden" name="id" value="${customer.id}">
-                <hr width="50%"/>
                 <div class="form-div">
                     <div class="form-div-customer">
                         <c:out value="${customer.toString()}"/>
@@ -55,12 +56,15 @@
                         <button type="submit" name="action" value="delete">DELETE</button>
                     </div>
                 </div>
-                <hr width="50%"/>
             </form:form>
+            <form:form action="${pageContext.request.contextPath}/profile" method="post">
+                <input type="hidden" id="${customer.id}" name="id" value="${customer.id}">
+                <button type="submit">Details</button>
+            </form:form>
+            <hr width="50%"/>
         </c:forEach>
     </c:otherwise>
 </c:choose>
 <br/>
-<a href="<c:url value="/"/>">Back</a>
 </body>
 </html>

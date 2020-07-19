@@ -1,6 +1,6 @@
-package cl.fullstack.dbtest.repository;
+package cl.fullstack.dbtest.repository.customer;
 
-import cl.fullstack.dbtest.model.Customer;
+import cl.fullstack.dbtest.model.customer.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
