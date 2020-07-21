@@ -8,6 +8,7 @@ import java.util.Date;
 @Entity
 @Component
 public class CustomerOrder implements CustomerService  {
+
     @Id
     @GeneratedValue(generator = "CUSTOMER_ORDERS_SEQ")
     private Long id;

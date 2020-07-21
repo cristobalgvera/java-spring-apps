@@ -22,7 +22,7 @@ public class CustomerController {
     @Autowired
     private CustomerRepository customerRepository;
 
-    @RequestMapping("/")
+    @RequestMapping(value = {"", "/"})
     public String index(Model model) {
         customer = new Customer(); // To guarantee a clean object
         model.addAttribute("customer", customer);
