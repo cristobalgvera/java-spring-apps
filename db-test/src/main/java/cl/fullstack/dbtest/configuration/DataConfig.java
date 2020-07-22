@@ -5,12 +5,13 @@ import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 
+import javax.activation.DataSource;
 import javax.sql.DataSource;
 
 /*
     This class was create to set database properties in an external file to make
     our application more cleaner and readable.
- */
+*/
 
 @Configuration
 @PropertySource(value = "classpath:properties/data/data.properties")
