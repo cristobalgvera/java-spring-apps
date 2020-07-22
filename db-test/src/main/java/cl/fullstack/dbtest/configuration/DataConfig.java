@@ -5,7 +5,6 @@ import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 
-import javax.activation.DataSource;
 import javax.sql.DataSource;
 
 /*
