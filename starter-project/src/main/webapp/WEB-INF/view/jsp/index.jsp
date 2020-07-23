@@ -7,11 +7,19 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>Index</title>
 </head>
 <body>
-<a href="<c:url value="/user/test"/>">Show me</a>
+<form:form action="${pageContext.request.contextPath}/index/test" method="post" modelAttribute="persona">
+    First name: <form:input path="name"/></br>
+    Last name:  <form:input path="lastName"/></br>
+    Age:        <form:input path="age"/></br>
+    Sex: </br>  <form:radiobutton path="sex" value="${true}" label="Woman"/>
+                <form:radiobutton path="sex" value="${false}" label="Man"/>
+    </br><button type="submit">Register</button>
+</form:form>
 </body>
 </html>
