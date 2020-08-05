@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Person Form</title>
+</head>
+<body>
+<h1>Complete the form</h1>
+<p>Be careful ;)</p>
+<form method="post" action="#" th:action="@{/registry}" th:object="${person}">
+    <div>
+        <label for="name">Name:</label>
+        <input id="name" th:field="*{name}">
+        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input id="email" th:field="*{email}">
+        <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+    </div>
+    <div>
+        <label for="age">Age:</label>
+        <input id="age" th:field="*{age}">
+        <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
+    </div>
+    <div>
+        <label for="phone-number">Phone number: +569</label>
+        <input id="phone-number" th:field="*{phoneNumber}">
+        <span th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></span>
+    </div>
+    <div>
+        <label for="fingers">How many fingers do you have?</label>
+        <br/>
+        <input id="fingers" th:field="*{fingers}">
+        <span th:if="${#fields.hasErrors('fingers')}" th:errors="*{fingers}"></span>
+    </div>
+    <div>
+        <label for="date-time">Today is:</label>
+        <input id="date-time" type="date" th:field="*{dateTime}">
+        <span th:if="${#fields.hasErrors('dateTime')}" th:errors="*{dateTime}"></span>
+    </div>
+    <div>
+        <label>Gender:</label>
+        <br/>
+        <label for="gender-male">Male</label>
+        <input id="gender-male" name="gender" type="radio" th:field="*{gender}" value="0">
+        <label for="gender-female">Female</label>
+        <input id="gender-female" name="gender" type="radio" th:field="*{gender}" value="0">
+        <span th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></span>
+    </div>
+    <button type="submit">Validate</button>
+</form>
+</body>
+</html>

@@ -1,13 +1,13 @@
-package cl.awakelab.resttests;
+package cl.fullstack.validationlearning;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RestTestsApplication {
+public class ValidationLearningApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RestTestsApplication.class, args);
+        SpringApplication.run(ValidationLearningApplication.class, args);
     }
 
 }
