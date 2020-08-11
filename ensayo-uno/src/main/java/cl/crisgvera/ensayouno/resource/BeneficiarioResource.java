@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/beneficiarios")
 public class BeneficiarioResource {
-    // TODO: it's a good practice call a REST controller inside your own app? I don't think so
-
     @Autowired
     private BeneficiarioService beneficiarioService;
 
