@@ -22,4 +22,7 @@ public class Ciudad {
     @JsonIgnore
     @EqualsAndHashCode.Exclude
     private Set<Beneficiario> beneficiarios;
+
+    public Ciudad() {
+    }
 }

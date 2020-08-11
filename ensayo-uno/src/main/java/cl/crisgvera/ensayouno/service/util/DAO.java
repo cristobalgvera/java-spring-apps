@@ -1,4 +1,4 @@
-package cl.crisgvera.ensayouno.util;
+package cl.crisgvera.ensayouno.service.util;
 
 import java.util.Collection;
 

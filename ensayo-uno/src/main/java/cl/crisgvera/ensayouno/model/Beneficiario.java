@@ -20,6 +20,9 @@ public class Beneficiario {
     private String nombre;
     private int edad;
 
+    public Beneficiario() {
+    }
+
     @ManyToOne(fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}
     )

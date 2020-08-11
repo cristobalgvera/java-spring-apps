@@ -27,6 +27,9 @@ public class Ayuda {
     @EqualsAndHashCode.Exclude
     private Beneficiario beneficiario;
 
+    public Ayuda() {
+    }
+
     @Override
     public String toString() {
         return "Ayuda{" +

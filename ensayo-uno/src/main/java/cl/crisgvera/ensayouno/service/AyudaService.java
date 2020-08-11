@@ -2,7 +2,7 @@ package cl.crisgvera.ensayouno.service;
 
 import cl.crisgvera.ensayouno.model.Ayuda;
 import cl.crisgvera.ensayouno.repository.AyudaRepository;
-import cl.crisgvera.ensayouno.util.DAO;
+import cl.crisgvera.ensayouno.service.util.DAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
